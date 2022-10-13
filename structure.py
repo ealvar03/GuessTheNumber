@@ -1,13 +1,14 @@
-import random
+from random import randint
 
-number = random.randint(1, 100)
+number = randint(1, 100)
 
 
 # Function to choose the difficulty of the game.
 def choose_difficulty():
     """
-    :return: If the user types 'easy' they will have 10 attempts to guess the number, otherwise, if they type 'hard'
+    If the user types 'easy' they will have 10 attempts to guess the number, otherwise, if they type 'hard'
     they will have 5 attempts instead.
+    :return: It will return the attempt number depending on the difficulty level chosen by the user.
     """
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
     if difficulty == 'easy':
@@ -22,7 +23,8 @@ def choose_difficulty():
 # Input that will allow the user to make a guess.
 def user_guess():
     """
-    :return: The user will choose a number between 1 and 100.
+    The user will choose a number between 1 and 100.
+    :return: It returns the number chosen by the user.
     """
     guess_number = int(input('Make a guess: '))
     return guess_number
@@ -31,7 +33,7 @@ def user_guess():
 # Check the number the user chose.
 def check_guess():
     """
-    :return: It will compare the user guess with the random number selected and depending on how many attempts remain,
+    It will compare the user guess with the random number selected and depending on how many attempts remain,
     it will allow the user to try to guess the number once again, until they run out of attempts, and it will provide
     a hint if the number to guess is higher or lower than the number chose by the user.
     """
